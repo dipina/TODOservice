@@ -24,14 +24,14 @@ const App = () => {
   const [editingTask, setEditingTask] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:4000/todos')
+    axios.get('/todos')
       .then(response => setTodos(response.data))
       .catch(error => console.error('Error fetching todos:', error));
   }, []);
 
   const addTodo = () => {
     if (task) {
-      axios.post('http://localhost:4000/todos', { title: task })
+      axios.post('/todos', { title: task })
         .then(response => {
           setTodos([...todos, response.data]);
           setTask('');
@@ -41,7 +41,7 @@ const App = () => {
   };
 
   const deleteTodo = (id) => {
-    axios.delete(`http://localhost:4000/todos/${id}`)
+    axios.delete(`/todos/${id}`)
       .then(() => {
         setTodos(todos.filter(todo => todo.id !== id));
       })
@@ -54,7 +54,7 @@ const App = () => {
   };
 
   const updateTodo = (id) => {
-    axios.patch(`http://localhost:4000/todos/${id}`, { title: editingTask })
+    axios.patch(`/todos/${id}`, { title: editingTask })
       .then(response => {
         setTodos(todos.map(todo => (todo.id === id ? response.data : todo)));
         setEditingId(null);
@@ -64,7 +64,7 @@ const App = () => {
   };
 
   const toggleCompleted = (id, completed) => {
-    axios.patch(`http://localhost:4000/todos/${id}`, { completed: !completed })
+    axios.patch(`/todos/${id}`, { completed: !completed })
       .then(response => {
         setTodos(todos.map(todo => (todo.id === id ? response.data : todo)));
       })

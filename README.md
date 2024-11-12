@@ -6,7 +6,7 @@ Run back-end:
   
   npm run start
   
-  Go to: http://localhost:4000/todos
+  Go to: /todos
 
 Run the front-end:
   
