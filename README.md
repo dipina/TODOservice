@@ -18,8 +18,9 @@ Steps to run manually the server side:
 cd todo-service
 npm install
 npm run start
-  
+```  
 Go to: /todos
+
 
 ## Run the front-end:
 Steps to run manually the client side:
@@ -28,7 +29,7 @@ Steps to run manually the client side:
 cd client
 npm install reactstrap bootstrap
 npm start
-
+```
 Go to:   http://localhost:3000
 
 ## Steps to Integrate React Client with NestJS Back-End
@@ -39,7 +40,7 @@ Go to the client directory and build the React application:
 cd client
 npm install        # Install dependencies
 npm run build      # Build the client
-
+```
 
 This will create a build directory inside client with the production-ready static files.
 Move the React Build into the NestJS Directory:
@@ -50,6 +51,7 @@ You can do this with a command:
 ```bash
 cp -r build/* ../todo-service/public/ (Linux)
 xcopy build\* ..\todo-service\public\ /E /I (Windows)
+```
 
 ### Configure NestJS to Serve Static Files:
 In the todo-service NestJS application, install the serve-static package if not already present:
