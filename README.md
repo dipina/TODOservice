@@ -57,6 +57,7 @@ In the todo-service NestJS application, install the serve-static package if not 
 ```bash
 cd ../todo-service
 npm install @nestjs/serve-static
+```
 
 Open src/main.ts and add the following configuration to serve the static files:
 
@@ -77,7 +78,7 @@ async function bootstrap() {
   await app.listen(port);
 }
 bootstrap();
-
+```
 
 ### Set Up a Fallback Route for the React App:
 In todo-service/src/app.module.ts, import the ServeStaticModule and configure it to serve the React app:
@@ -100,6 +101,7 @@ import { AppService } from './app.service';
   providers: [AppService],
 })
 export class AppModule {}
+```
 
 ### Run the Combined Application:
 
@@ -107,6 +109,7 @@ Start the NestJS server:
 
 ```bash
 npm run start
+```
 
 Now, visiting the server’s URL (e.g., http://localhost:3000) will serve the React application, while API routes (like http://localhost:3000/api) will remain accessible for backend functions.
 By following these steps, your React client will be served from the todo-service NestJS application, creating a unified deployment with the front-end and back-end under the same directory. ​
@@ -116,3 +119,4 @@ By following these steps, your React client will be served from the todo-service
 ```bash
 FOR /d /r %G IN (node_modules) DO @rmdir /s /q "%G" (Windows)
 find . -type d -name "node_modules" -exec rm -rf {} + (Linux)
+```
