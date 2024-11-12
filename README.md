@@ -2,7 +2,7 @@
 
 ## Steps for deployment 
 
-You may clone the service from [https://github.com/dipina/TODOservice] (TODO Service's GitHub repository) 
+You may clone the service from [https://github.com/dipina/TODOservice](TODO Service's GitHub repository) 
 
 * Log in to Render.com using your GitHub account.
 * Click on "New > Web Service."
